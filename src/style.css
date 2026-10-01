@@ -318,11 +318,12 @@ body {
 
 /* The card beside the active book */
 .card {
+  --card-width: clamp(320px, 26vw, 360px);
   position: fixed;
   z-index: 20;
-  width: clamp(220px, 19vw, 280px);
+  width: var(--card-width);
   aspect-ratio: 425 / 640;
-  padding: 13% 12% 11%;
+  padding: calc(var(--card-width) * 0.13) calc(var(--card-width) * 0.12) calc(var(--card-width) * 0.11);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -366,11 +367,11 @@ body {
 
 @media (max-width: 640px) {
   .card {
+    --card-width: min(340px, calc(100vw - 32px));
     left: 50% !important;
     top: auto !important;
     bottom: 12px;
-    width: min(250px, calc(100vw - 32px));
-    margin-left: calc(min(250px, calc(100vw - 32px)) / -2);
+    margin-left: calc(var(--card-width) / -2);
   }
 }
 
