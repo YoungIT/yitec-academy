@@ -12,6 +12,10 @@ pnpm build          # build the home page and every non-planned lecture into dis
 pnpm preview        # serve dist/ to click through the whole site
 ```
 
+## Lecture 01: How agents work
+
+Lecture one is a React slide presentation based on `drafts/lecture-01.md`, with a selected replay from the supplied Pi session, interactive request and cache diagrams, and visual Q&A slides. Run `pnpm lecture 01` to open it. Use the arrow keys, Previous/Next buttons, or slide selector to navigate; the diagrams have their own step controls.
+
 ## Deploy
 
 Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`).

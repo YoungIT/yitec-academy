@@ -1,49 +1,19 @@
 {
   "courses": [
     {
-      "title": "How agents work",
-      "summary": "What actually happens when an AI agent takes on a task: the model, the tools it calls, and the loop that ties them together.",
+      "title": "A BOOKSHELF",
+      "summary": "SUMMARY",
       "lectures": [
         {
           "slug": "01-what-an-agent-is",
-          "title": "What an agent is",
-          "summary": "A model, some tools, and a loop. Where an agent stops being a chatbot.",
+          "title": "How agents work",
+          "summary": "Inside the model, tool calls, and agent loop. Explore a real Pi session, MCP, skills, prompt caching, and token costs.",
           "status": "draft"
         },
         {
-          "slug": "02-the-agent-loop",
-          "title": "The agent loop",
-          "summary": "Think, act, observe, repeat. Following one task from prompt to finish.",
-          "status": "planned"
-        },
-        {
-          "slug": "03-tools",
-          "title": "Tools",
-          "summary": "How a model asks for a tool call, who runs it, and what comes back.",
-          "status": "planned"
-        },
-        {
-          "slug": "04-the-context-window",
-          "title": "The context window",
-          "summary": "What fills it, what it costs, and what happens when it runs out.",
-          "status": "planned"
-        },
-        {
-          "slug": "05-planning-and-long-tasks",
-          "title": "Planning and long tasks",
-          "summary": "Breaking work down, keeping track of progress, and knowing when to stop.",
-          "status": "planned"
-        },
-        {
-          "slug": "06-subagents",
-          "title": "Subagents",
-          "summary": "When one agent hands work to another, and what each one gets to see.",
-          "status": "planned"
-        },
-        {
-          "slug": "07-making-agents-reliable",
-          "title": "Making agents reliable",
-          "summary": "Evals, guardrails, and deciding what an agent may do without asking.",
+          "slug": "02-chua-nghi-ra",
+          "title": "Chua nghi ra",
+          "summary": "Da bao chua nghi ra ma",
           "status": "planned"
         }
       ]
