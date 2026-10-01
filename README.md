@@ -12,6 +12,11 @@ pnpm build          # build the home page and every non-planned lecture into dis
 pnpm preview        # serve dist/ to click through the whole site
 ```
 
+## Deploy
+
+Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`).
+The site is served from `/<repo-name>/`, so the build runs with `BASE_PATH=/<repo-name>/`; locally it defaults to `/`.
+
 ## Add a lecture
 
 1. Create `lectures/<slug>/slides.md`. Copy the headmatter from `lectures/01-what-an-agent-is/slides.md`

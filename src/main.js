@@ -30,7 +30,7 @@ function lectureRow(lecture, index) {
     el('span', { class: 'lecture-status', text: STATUS[lecture.status] }),
   ]
   const inner = open
-    ? el('a', { class: 'lecture', href: `/lectures/${lecture.slug}/` }, body)
+    ? el('a', { class: 'lecture', href: `${import.meta.env.BASE_URL}lectures/${lecture.slug}/` }, body)
     : el('div', { class: 'lecture is-planned' }, body)
   return el('li', {}, [inner])
 }

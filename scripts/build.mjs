@@ -4,6 +4,8 @@ import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const root = resolve(import.meta.dirname, '..')
+// Same variable vite.config.js reads, so decks live under the home page's path.
+const base = process.env.BASE_PATH ?? '/'
 const bin = (name) => resolve(root, 'node_modules/.bin', name)
 
 function run(cmd, args) {
@@ -21,5 +23,5 @@ for (const lecture of courses.flatMap((c) => c.lectures)) {
     console.error(`lectures.json lists "${lecture.slug}" as ${lecture.status}, but ${entry} doesn't exist.`)
     process.exit(1)
   }
-  run(bin('slidev'), ['build', entry, '--base', `/lectures/${lecture.slug}/`, '--out', resolve(root, 'dist/lectures', lecture.slug)])
+  run(bin('slidev'), ['build', entry, '--base', `${base}lectures/${lecture.slug}/`, '--out', resolve(root, 'dist/lectures', lecture.slug)])
 }
