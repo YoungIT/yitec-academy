@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>YITEC Academy</title>
+  <g transform="translate(0,-18)">
+    <path d="M124 146 C112 106 80 82 30 74 L30 108 C70 114 100 134 112 158 Z"/>
+    <path d="M132 146 C144 106 176 82 226 74 L226 108 C186 114 156 134 144 158 Z"/>
+    <rect x="114" y="170" width="28" height="56" rx="4"/>
+  </g>
+</svg>

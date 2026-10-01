@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 256">
+  <g>  <g fill="none" stroke="#000" stroke-width="26" stroke-linecap="round">
+    <line x1="101.13" y1="88.13" x2="50.22" y2="37.22"/>
+    <line x1="154.87" y1="88.13" x2="205.78" y2="37.22"/>
+    <line x1="128" y1="153" x2="128" y2="219"/>
+  </g>
+  <circle cx="128" cy="115" r="24"/></g>
+  <text x="290" y="150" font-family="Helvetica Neue, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-2">YITEC</text>
+  <text x="294" y="205" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="400" letter-spacing="10">ACADEMY</text>
+</svg>

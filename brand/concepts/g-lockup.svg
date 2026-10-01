@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 256">
+  <g>  <rect x="28" y="28" width="32" height="32" rx="4"/>
+  <rect x="196" y="28" width="32" height="32" rx="4"/>
+  <rect x="70" y="70" width="32" height="32" rx="4"/>
+  <rect x="154" y="70" width="32" height="32" rx="4"/>
+  <circle cx="128.0" cy="128.0" r="18.0"/>
+  <rect x="112" y="154" width="32" height="32" rx="4"/>
+  <rect x="112" y="196" width="32" height="32" rx="4"/></g>
+  <text x="290" y="150" font-family="Helvetica Neue, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-2">YITEC</text>
+  <text x="294" y="205" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="400" letter-spacing="10">ACADEMY</text>
+</svg>

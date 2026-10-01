@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 256">
+  <g>  <g transform="translate(0,-7)">
+    <polyline points="58,40 128,110 198,40" fill="none" stroke="#000" stroke-width="30" stroke-linecap="square" stroke-linejoin="miter"/>
+    <rect x="113" y="150" width="30" height="80"/>
+  </g></g>
+  <text x="290" y="150" font-family="Helvetica Neue, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-2">YITEC</text>
+  <text x="294" y="205" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="400" letter-spacing="10">ACADEMY</text>
+</svg>

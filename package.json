@@ -1,0 +1,17 @@
+{
+  "name": "yitec-academy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "slides": "node scripts/slides.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "slidev-addon-yitec-academy": "link:slidev-addon",
+    "vite": "^8.3.1"
+  }
+}

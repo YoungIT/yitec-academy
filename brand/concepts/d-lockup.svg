@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 256">
+  <g>  <g transform="translate(128,128) scale(0.84) translate(-128,-130)">
+    <polygon points="21,40 69,40 128,99 187,40 235,40 145,130 145,220 111,220 111,130" fill="none" stroke="#000" stroke-width="16" stroke-linejoin="round"/>
+  </g></g>
+  <text x="290" y="150" font-family="Helvetica Neue, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-2">YITEC</text>
+  <text x="294" y="205" font-family="Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="400" letter-spacing="10">ACADEMY</text>
+</svg>
