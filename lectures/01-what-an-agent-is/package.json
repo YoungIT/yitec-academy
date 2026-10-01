@@ -1,0 +1,12 @@
+{
+  "name": "lecture-01-what-an-agent-is",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build --base ${BASE_PATH:-/}"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  }
+}

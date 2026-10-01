@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>YITEC Academy</title>
     <meta name="description" content="Seminars for the YITEC team." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Patrick+Hand&display=swap"
     />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="%BASE_URL%" aria-label="YITEC Academy home">
-        <svg class="brand-mark" viewBox="20 41 220 118" fill="currentColor" aria-hidden="true">
-          <path d="M20 41 L37 41 L66.75 84.75 L60.9 101.1 Z M87 41 L105 41 L62.5 159 L44.5 159 Z M110 41 L180.5 41 L174 59 L122 59 L86.5 159 L68 159 Z" />
-          <path d="M196 141 L240 141 L233.45 159 L189.45 159 Z" />
-        </svg>
-        <span class="brand-name">YITEC Academy</span>
-      </a>
-    </header>
-
-    <main id="courses"></main>
-
-    <footer class="site-footer">
-      <p>In a deck, press <kbd>O</kbd> to see every slide at once and <kbd>F</kbd> for fullscreen.</p>
-    </footer>
-
+    <!-- Roughens ink edges so paper and borders look hand-drawn. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" />
+        <feDisplacementMap in="SourceGraphic" scale="4" />
+      </filter>
+    </svg>
+    <div class="scene">
+      <header class="topbar">
+        <a class="brand" href="%BASE_URL%" aria-label="YITEC Academy home">
+          <img class="brand-logo" src="/logo.png" alt="" width="256" height="256" />
+          <span class="brand-name">YITEC Academy</span>
+        </a>
+      </header>
+      <main class="library">
+        <div class="bookcase" id="bookcase"></div>
+      </main>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -1,6 +1,0 @@
-{
-  "name": "slidev-addon-yitec-academy",
-  "private": true,
-  "keywords": ["slidev-addon"],
-  "engines": { "slidev": ">=53.0.0" }
-}

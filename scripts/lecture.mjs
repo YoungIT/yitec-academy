@@ -1,4 +1,4 @@
-// Live-edit one lecture: `pnpm slides 01` (matches the folder name prefix). Defaults to the first lecture.
+// Live-edit one lecture: `pnpm lecture 01` (matches the folder name prefix). Defaults to the first lecture.
 import { spawnSync } from 'node:child_process'
 import { readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
@@ -13,6 +13,5 @@ if (!match) {
   process.exit(1)
 }
 
-const entry = resolve(root, 'lectures', match, 'slides.md')
-const result = spawnSync(resolve(root, 'node_modules/.bin/slidev'), [entry, '--open'], { cwd: root, stdio: 'inherit' })
+const result = spawnSync('pnpm', ['--dir', resolve(root, 'lectures', match), 'dev'], { cwd: root, stdio: 'inherit' })
 process.exit(result.status ?? 0)
