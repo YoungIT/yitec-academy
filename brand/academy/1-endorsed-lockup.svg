@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 256">
-  <path fill-rule="evenodd" d="M28.00 54.48 L49.18 54.48 L86.26 109.00 L78.97 129.37 Z M111.49 54.48 L133.92 54.48 L80.96 201.52 L58.53 201.52 Z M140.15 54.48 L228.00 54.48 L219.90 76.91 L155.10 76.91 L110.87 201.52 L87.81 201.52 Z"/>
-  <g transform="skewX(-20)" font-family="Helvetica Neue, Arial, sans-serif">
-    <text x="340" y="150" font-size="104" font-weight="700" letter-spacing="-1">YITEC</text>
-    <text x="350" y="205" font-size="40" letter-spacing="10">ACADEMY</text>
-  </g>
-</svg>

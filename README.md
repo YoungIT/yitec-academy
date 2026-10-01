@@ -26,4 +26,4 @@ pnpm preview        # serve dist/ to click through the whole site
 - `lectures.json`: courses and lectures shown on the home page
 - `index.html`, `src/`: home page
 - `slidev-addon/`: shared slide styles, the `<YaMark />` logo component, and the corner logo on every slide
-- `brand/`: the YITEC mark traced to SVG, and the academy logo (`brand/academy/final/`)
+- `brand/`: the YITEC mark traced to SVG, and the academy logo (`brand/academy/`)
