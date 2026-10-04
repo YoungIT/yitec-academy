@@ -21,6 +21,7 @@
 * { box-sizing: border-box }
 html, body, #root { height: 100%; overflow: hidden }
 body { margin: 0; background: var(--paper) }
+html.cover-page, html.cover-page body, html.cover-page #root { background: var(--model) }
 #root { display: grid; place-items: center }
 
 /* ---------- Base type ---------- */
@@ -34,6 +35,13 @@ h1 {
   text-wrap: balance;
 }
 h2 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.2; margin: 0 0 .6rem }
+.section-label { font-size: .9rem; font-weight: 600; line-height: 1.2; margin: 0 0 .55rem }
+.section-label.technique { color: var(--model) }
+.section-label.practice { color: var(--host) }
+.course-sections { display: grid; gap: 1.4rem; max-width: 64ch }
+.course-sections h2 { font-size: 1.7rem; margin-bottom: .4rem }
+.course-sections p { font-size: 1.2rem; margin: 0 }
+.experiment-quote { margin: 1.5rem 0 0; font-size: 1.4rem; font-style: italic; line-height: 1.3 }
 p { font-size: 1rem; line-height: 1.45; max-width: 62ch; margin: .6rem 0 }
 .lead { font-size: 1.4rem; line-height: 1.3; color: var(--quiet); max-width: 50ch; margin: 0 0 1.4rem; text-wrap: pretty }
 a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px }
@@ -87,6 +95,18 @@ button[aria-pressed=true] { background: var(--ink); color: var(--paper) }
 .slide-body:focus-visible { outline-offset: -3px }
 .slide-body > :first-child { margin-top: 0 }
 .slide-body > :last-child { margin-bottom: 0 }
+.stage-cover { --paper: var(--model); --ink: #FFFFFF; --quiet: #FFFFFF; --line: #FFFFFF66; color: #FFFFFF }
+.slide-cover { grid-template-rows: minmax(0, 1fr) }
+.cover-layout { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 2rem }
+.cover-layout h1 { font-size: 5.2rem; line-height: 1.05; max-width: 16ch; margin: 0 }
+.cover-layout .lead { color: inherit; margin: 0 }
+.cover-layout figure { display: flex; align-items: center; gap: 1rem; margin: 0 }
+.cover-layout img { display: block; width: 6rem; flex: none; aspect-ratio: 1; object-fit: contain; border-radius: 50% }
+.cover-layout figcaption { margin: 0; font-size: 1.1rem }
+.section-hero { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: 2rem; align-items: center }
+.section-hero .lead { margin-top: 1.2rem }
+.section-hero .section-illustration { width: 100%; max-height: 22rem; border-radius: 0 }
+.stage-cover :focus-visible, .stage-cover .counter:focus-within { outline-color: #FFFFFF }
 
 /* Notes (hidden unless toggled; rendered into this slot above the chrome) */
 .notes { padding-top: .6rem }
@@ -148,9 +168,10 @@ button[aria-pressed=true] { background: var(--ink); color: var(--paper) }
 .flashcard[aria-pressed=true] .flashcard-inner { transform: rotateY(180deg) }
 .flashcard-face { grid-area: 1 / 1; min-height: 0; overflow: hidden; padding: .8rem 1.4rem; border: 2px solid var(--ink); border-radius: var(--radius); background: var(--paper); backface-visibility: hidden }
 .flashcard-face.front { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; text-align: center }
+.flashcard-face.front .section-label { margin: 0 }
 .flashcard-question { font-size: 2.6rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.2; max-width: 30ch; margin: 0 }
 .flashcard-face small { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--quiet) }
-.flashcard-face.back { transform: rotateY(180deg); border-color: var(--host); cursor: default }
+.flashcard-face.back { transform: rotateY(180deg); border-color: var(--host); cursor: default; overflow: auto; overscroll-behavior: contain }
 .slide-flip { grid-template-rows: minmax(0, 1fr) }
 .flashcard-title { font-size: 1.9rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.05; margin: 0 0 .6rem }
 .flashcard-face.back .lead { font-size: 1.25rem; margin-bottom: .5rem }
@@ -284,12 +305,42 @@ button[aria-pressed=true] { background: var(--ink); color: var(--paper) }
 
 .comparison { padding-top: .8rem; border-top: 2px solid var(--host) }
 .comparison:nth-child(2) { border-color: var(--model) }
+.agents-practices { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0 0 1rem; font-size: .95rem; line-height: 1.35 }
+.agents-practices th, .agents-practices td { width: 50%; padding: .5rem .8rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); overflow-wrap: anywhere }
+.agents-practices th { font-size: 1.15rem; border-top: 2px solid var(--host) }
+.agents-practices th:last-child { border-top-color: var(--model) }
+.starter-agents { height: 100%; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) }
+.starter-agents .lead { max-width: 70ch; margin-bottom: .8rem; font-size: 1.15rem }
+.starter-agents pre { min-height: 0; max-height: none; font-size: .9rem; overscroll-behavior: contain }
+.starter-agents pre:focus-visible { outline-offset: -3px }
 .mini-flow { display: flex; flex-direction: column; gap: .4rem; padding: .7rem .9rem; border: 1.5px solid var(--line); border-radius: var(--radius) }
 .mini-flow b { font-size: .85rem; color: var(--quiet) }
 .tool-cloud { display: flex; flex-wrap: wrap; gap: .6rem; max-width: 20rem; padding-top: .4rem }
 .budget { display: flex; flex-direction: column; gap: .3rem }
 .budget span { padding: .5rem 1rem; border-left: 3px solid var(--ink) }
 .budget span:last-child { border-color: var(--host) }
+
+/* Slide 13: AGENTS.md example | repo tree + how it enters context */
+.agents-lead { max-width: 64ch; margin-bottom: 1.1rem }
+.agents-md { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.2rem; margin: 0 0 .7rem }
+.agents-md > section { min-width: 0 }
+.agents-md h2 { display: flex; align-items: baseline; gap: .6rem }
+.agents-md h2 span { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--quiet) }
+.agents-md pre { max-height: none; font-size: .8rem; line-height: 1.45 }
+.agents-md .tool-tags { gap: .4rem; margin-top: .6rem }
+.agents-md .tool-tags span { padding: .2rem .55rem; font-size: .8rem }
+.repo-tree { list-style: none; margin: 0 0 .5rem; padding: 0; display: flex; flex-direction: column; gap: .15rem }
+.repo-tree li { display: flex; align-items: baseline; gap: .8rem; padding: .15rem .5rem; margin-left: calc(var(--d) * 1.4rem); border-left: 2px solid var(--line) }
+.repo-tree code { font-size: .85rem }
+.repo-tree span { font-size: .8rem; color: var(--quiet) }
+.repo-tree .agents { border-left-color: var(--ink); font-weight: 600 }
+.repo-tree .near { border-left-color: var(--highlight); background: #FDF6DA }
+.repo-tree .near span { color: var(--ink) }
+.repo-tree .edited span { color: var(--quiet) }
+.agents-rule { font-size: .9rem; margin: 0 0 .7rem }
+.agents-md .input-list { margin: 0 }
+.agents-md .input-item { grid-template-columns: auto minmax(0, 1fr); padding: .35rem .7rem }
+.agents-md .input-item .body { grid-column: 1 / -1; font-family: var(--mono); font-size: .8rem }
 
 @keyframes event-enter { from { opacity: .3 } to { opacity: 1 } }
 @keyframes history-enter { from { opacity: 0; transform: translateY(-.4rem) } to { opacity: 1; transform: none } }
@@ -302,11 +353,18 @@ button[aria-pressed=true] { background: var(--ink); color: var(--paper) }
   .stage { width: auto; aspect-ratio: auto; container-type: normal; min-height: 100dvh; padding: 2rem 1.25rem 0; grid-template-rows: 1fr auto auto }
   .slide { display: block }
   .slide-body { overflow: visible; padding: 0 }
+  .cover-layout { height: auto }
+  .cover-layout h1 { font-size: clamp(3.5rem, 14vw, 5.2rem) }
+  .cover-layout img { width: 5rem }
+  .section-hero { grid-template-columns: 1fr }
+  .section-hero .section-illustration { max-width: 16rem; max-height: 18rem }
+  .starter-agents { height: auto }
+  .starter-agents pre { max-height: 60dvh }
   h1 { font-size: clamp(2rem, 9vw, 3rem); margin-bottom: 1rem }
   .lead { font-size: 1.2rem }
   .chrome { flex-wrap: wrap; gap: .6rem 1rem; font-size: .85rem; padding: 1.4rem 0 1.4rem }
   .note { font-size: .85rem }
-  .columns, .toolboxes, .replay-layout, .skill-stages { grid-template-columns: 1fr; gap: 1.5rem }
+  .columns, .toolboxes, .replay-layout, .skill-stages, .agents-md { grid-template-columns: 1fr; gap: 1.5rem }
   .pipeline, .flow { flex-direction: column; align-items: stretch; gap: .6rem }
   .connector { text-align: center; transform: rotate(90deg) }
   .arrow { transform: rotate(90deg); margin: .6rem auto }
