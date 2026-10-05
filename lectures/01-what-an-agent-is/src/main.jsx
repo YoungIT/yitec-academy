@@ -32,6 +32,7 @@ const sources = {
   subagentPractices: ['Delegate investigation', 'https://code.claude.com/docs/en/best-practices#use-subagents-for-investigation'],
   subagentPatterns: ['Subagent patterns', 'https://code.claude.com/docs/en/sub-agents#common-patterns'],
   contextManagement: ['Manage context', 'https://code.claude.com/docs/en/best-practices#manage-context-aggressively'],
+  memory: ['Claude Code memory', 'https://code.claude.com/docs/en/memory#enable-or-disable-auto-memory'],
   toolSearch: ['Anthropic tool search', 'https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool'],
   codeMcpSearch: ['Claude Code MCP tool search', 'https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search'],
   communication: ['Communicate effectively', 'https://code.claude.com/docs/en/best-practices#communicate-effectively'],
@@ -244,6 +245,9 @@ function TryingThings() { return <div className="cover-layout section-hero"><h1>
 function LetCodeSpeak() {
  return <><p className="lead">My experiment: ask agents not to add code comments.</p><div className="columns"><section className="comparison"><h2>Keep code self-explanatory</h2><p>Use clear names and small functions. Verify <strong>executable behavior and test outcomes</strong>.</p><p>Comments are prose: ordinary tests do not execute or validate them. Agents may read <strong>stale comments</strong> as if they still describe the code.</p><p>Large comment blocks also consume context.</p></section><section className="comparison"><h2>Keep context in docs/</h2><p>Maintain a concise map of <strong>services, entry points, and module ownership</strong>: where things live.</p><p>Record non-obvious workarounds and their reasons, with links to relevant code locations.</p><p>Keep these docs current; load only what the task needs.</p></section></div><blockquote className="experiment-quote">we even don't read the code btw</blockquote></>
 }
+function OwnMemory() {
+ return <><p className="lead">My experiment: disable Claude Code’s automatic memory and manage persistent context ourselves.</p><div className="columns"><section className="comparison"><h2>Why I’m trying this</h2><p>A server or session interruption can leave <strong>unsaved context unavailable</strong>.</p><p>Switching agents or harnesses can produce <strong>very different behavior</strong>: memory, loading rules, and instructions vary.</p><p>I want important decisions to survive beyond one conversation or tool.</p></section><section className="comparison"><h2>Make memory explicit</h2><p>Keep decisions and handoffs in <strong>reviewed project files</strong>. Tell each agent which files to read.</p><p>Check what reaches its context. Update useful lessons and prune stale assumptions over time.</p><p>Disable auto memory in <code>.claude/settings.json</code>:</p><Code>{`{ "autoMemoryEnabled": false }`}</Code></section></div><p className="takeaway">Know what the agent reads. Own the responsibility for improving that memory over time.</p><Note>Disabling auto memory does not disable manually maintained CLAUDE.md instructions. Auto memory is stored on disk; an outage does not itself erase it. Unsaved conversation context is a separate concern. Explicit memory helps make context inspectable and portable, but does not guarantee identical behavior across agents. This is an experiment, with results pending.</Note></>
+}
 const slides = [
  { title: 'How agent work', component: Opening, hero: true, refs: [] },
  { title: 'Fundamentals', component: Fundamentals, hero: true, refs: [] },
@@ -270,6 +274,7 @@ const slides = [
  { title: 'Communicate effectively', section: 'Beyond the Fundamentals', tone: 'practice', component: Communication, refs: ['communication', 'grilling'] },
  { title: 'Currently Trying, Results Pending', component: TryingThings, hero: true, refs: [] },
  { title: 'Let the code speak', section: 'Currently Trying, Results Pending', tone: 'practice', component: LetCodeSpeak, refs: [] },
+ { title: 'Own the agent’s memory', section: 'Currently Trying, Results Pending', tone: 'practice', component: OwnMemory, refs: ['memory'] },
  { title: 'Questions?', component: Ending, refs: [] },
 ]
 const flipSlides = new Set([Tools,Compact,Vietnamese,Tradeoffs,ManyTools])
